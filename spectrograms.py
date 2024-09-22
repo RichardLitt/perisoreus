@@ -11,12 +11,12 @@ print(f"Matplotlib version: {matplotlib.__version__}")
 print(f"SciPy version: {scipy.__version__}")
 
 # Load your audio file and process it to create a spectrogram
-file = '558679851.wav'  # specify your audio file
+file = '585940541.wav'  # specify your audio file
 fs, data = wavfile.read(file)  # Load the audio file
 
 # Clip the audio between 1 second and 4 seconds
-start_time = 1  # Start at 1 second
-end_time = 4    # End at 4 seconds
+start_time = 0  # Start at 1 second
+end_time = 3    # End at 4 seconds
 data = data[int(fs * start_time):int(fs * end_time)]  # Trim the data to the desired range
 
 # Increase nperseg and noverlap for better resolution
@@ -28,7 +28,7 @@ f, t, Zxx = signal.stft(data, fs, window='bartlett', nperseg=nperseg, noverlap=n
 Sxx = np.abs(Zxx)  # Use the magnitude of the STFT
 
 # Mask frequencies below 500 Hz by setting them to NaN
-min_freq = 500  # Minimum frequency to display (ignore frequencies below 500 Hz)
+min_freq = 1000  # Minimum frequency to display (ignore frequencies below 500 Hz)
 Sxx[f < min_freq, :] = np.nan  # Set values below 500 Hz to NaN
 
 # Limit the frequency to a maximum of 8000 Hz (8 kHz)
