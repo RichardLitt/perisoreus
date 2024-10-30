@@ -46,8 +46,9 @@ time_bounds = {0:[1,3.5],
 contrasts = {0:0.15,
              1:0.35}
 
-for i, f_path in enumerate([r"C:\Users\DBetchkal\CODE\GITHUB\perisoreus\558679851.wav", r"C:\Users\DBetchkal\CODE\GITHUB\perisoreus\585940541.wav"]):
+for i, f_path in enumerate(["558679851.wav", "585940541.wav"]):
 
+    # Generate the spectrogram and the associated bin descriptions
     Sxx, f_limit_idx, f, t = spectrogram(f_path, 
                                          start_time=time_bounds[i][0], 
                                          end_time=time_bounds[i][1])
@@ -76,4 +77,3 @@ plt.savefig('spectrogram.png', dpi=dpi, bbox_inches='tight')
 
 # Display the plot
 plt.show()
-
