@@ -64,7 +64,12 @@ for i, f_path in enumerate(["558679851.wav", "585940541.wav"]):
     )
 
     # Add a time label to both subplots
-    ax[i].set_xlabel('Time (s)', labelpad=10)
+    ax[0].set_xlabel(r'Time (s)'
+                    "\n"
+                    r'Location: Vermont.', labelpad=10)
+    ax[1].set_xlabel(r'Time (s)'
+                    "\n"
+                    r'Location: Oregon.', labelpad=10)
 
 # Add a frequency lable to the leftmost subplot
 ax[0].set_ylabel('Frequency (kHz)', labelpad=15)
