@@ -78,7 +78,7 @@ ax[0].set_ylabel('Frequency (kHz)', labelpad=15)
 plt.tight_layout()
 
 # Save the figure as a PNG file
-plt.savefig('spectrogram.png', dpi=dpi, bbox_inches='tight')
+plt.savefig('Figure_3.png', dpi=dpi, bbox_inches='tight')
 
 # Display the plot
 plt.show()
